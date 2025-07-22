@@ -1,0 +1,108 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#0F172A" />
+  
+  <!-- Define gradients and filters -->
+  <defs>
+    <linearGradient id="modernGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10B981;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EC4899;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.05" />
+    </linearGradient>
+    
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="10" stdDeviation="15" flood-color="#000" flood-opacity="0.2" />
+    </filter>
+    
+    <pattern id="gridPattern" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(59, 130, 246, 0.1)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  
+  <!-- Modern Blueprint Grid -->
+  <rect width="800" height="600" fill="url(#gridPattern)" />
+  
+  <!-- Glass Card Container -->
+  <rect x="100" y="150" width="600" height="350" rx="30" fill="url(#glassGrad)" stroke="rgba(255,255,255,0.1)" stroke-width="1" filter="url(#softShadow)" />
+  
+  <!-- Modern UI Wireframe -->
+  <rect x="150" y="200" width="280" height="250" rx="15" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+  
+  <!-- Header area with gradient -->
+  <rect x="150" y="200" width="280" height="40" rx="15" fill="url(#modernGrad)" opacity="0.8" />
+  
+  <!-- Navigation elements - modern tabs -->
+  <rect x="160" y="215" width="40" height="10" rx="5" fill="white" opacity="0.9" />
+  <rect x="210" y="215" width="40" height="10" rx="5" fill="white" opacity="0.5" />
+  <rect x="260" y="215" width="40" height="10" rx="5" fill="white" opacity="0.5" />
+  <rect x="310" y="215" width="40" height="10" rx="5" fill="white" opacity="0.5" />
+  
+  <!-- Content blocks with modern styling -->
+  <rect x="170" y="260" width="240" height="20" rx="10" fill="white" opacity="0.7" />
+  <rect x="170" y="290" width="180" height="10" rx="5" fill="white" opacity="0.5" />
+  <rect x="170" y="310" width="200" height="10" rx="5" fill="white" opacity="0.5" />
+  
+  <!-- Modern card components -->
+  <rect x="170" y="340" width="110" height="80" rx="10" fill="rgba(59, 130, 246, 0.2)" stroke="rgba(59, 130, 246, 0.5)" stroke-width="1" />
+  <rect x="300" y="340" width="110" height="80" rx="10" fill="rgba(16, 185, 129, 0.2)" stroke="rgba(16, 185, 129, 0.5)" stroke-width="1" />
+  
+  <!-- Modern Timeline/Gantt -->
+  <rect x="470" y="200" width="200" height="250" rx="15" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+  
+  <!-- Timeline header -->
+  <rect x="470" y="200" width="200" height="30" rx="15" fill="url(#accentGrad)" opacity="0.8" />
+  <text x="570" y="220" font-family="'Inter', sans-serif" font-size="12" font-weight="500" text-anchor="middle" fill="white">Project Timeline</text>
+  
+  <!-- Modern Gantt chart bars -->
+  <g>
+    <rect x="480" y="245" width="180" height="15" rx="7.5" fill="rgba(255,255,255,0.1)" />
+    <rect x="480" y="245" width="70" height="15" rx="7.5" fill="url(#modernGrad)" />
+    
+    <rect x="480" y="270" width="180" height="15" rx="7.5" fill="rgba(255,255,255,0.1)" />
+    <rect x="510" y="270" width="90" height="15" rx="7.5" fill="url(#modernGrad)" />
+    
+    <rect x="480" y="295" width="180" height="15" rx="7.5" fill="rgba(255,255,255,0.1)" />
+    <rect x="540" y="295" width="80" height="15" rx="7.5" fill="url(#modernGrad)" />
+    
+    <rect x="480" y="320" width="180" height="15" rx="7.5" fill="rgba(255,255,255,0.1)" />
+    <rect x="480" y="320" width="110" height="15" rx="7.5" fill="url(#modernGrad)" />
+    
+    <rect x="480" y="345" width="180" height="15" rx="7.5" fill="rgba(255,255,255,0.1)" />
+    <rect x="500" y="345" width="100" height="15" rx="7.5" fill="url(#modernGrad)" />
+    
+    <rect x="480" y="370" width="180" height="15" rx="7.5" fill="rgba(255,255,255,0.1)" />
+    <rect x="560" y="370" width="70" height="15" rx="7.5" fill="url(#modernGrad)" />
+    
+    <rect x="480" y="395" width="180" height="15" rx="7.5" fill="rgba(255,255,255,0.1)" />
+    <rect x="480" y="395" width="50" height="15" rx="7.5" fill="url(#modernGrad)" />
+  </g>
+  
+  <!-- Modern Compass/Design Tool -->
+  <circle cx="400" cy="150" r="40" fill="none" stroke="url(#accentGrad)" stroke-width="2" filter="url(#glow)" />
+  <circle cx="400" cy="150" r="4" fill="white" />
+  <path d="M400,150 L400,120" stroke="white" stroke-width="2" />
+  <path d="M400,150 L425,165" stroke="#EC4899" stroke-width="2" />
+  
+  
+  <!-- Modern decorative elements -->
+  <circle cx="150" cy="150" r="20" fill="none" stroke="url(#modernGrad)" stroke-width="2" opacity="0.3" />
+  <circle cx="650" cy="450" r="30" fill="none" stroke="url(#accentGrad)" stroke-width="2" opacity="0.3" />
+  
+  <!-- Abstract geometric shapes -->
+  <path d="M700,100 L730,130 L700,160 Z" fill="url(#modernGrad)" opacity="0.5" />
+  <path d="M100,400 L130,430 L100,460 Z" fill="url(#accentGrad)" opacity="0.5" />
+</svg>
