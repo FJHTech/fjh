@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with our team to discuss your technology needs and solutions">
+    <meta name="theme-color" content="#6200EA">
+    <title>Contact Us | FJH - Future Junction of High Tech</title>
+  <link rel="icon" type="image/png" href="images/fjh-logo.png">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Additional styles specific to Contact page */
+        .contact-section {
+            padding: var(--spacing-xl) var(--spacing-md);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            padding-right: var(--spacing-lg);
+        }
+
+        .contact-info h2 {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .contact-details {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, rgba(98, 0, 234, 0.1) 0%, rgba(0, 229, 255, 0.1) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: var(--spacing-sm);
+            flex-shrink: 0;
+        }
+
+        .contact-icon i {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+        }
+
+        .contact-text h3 {
+            margin-bottom: var(--spacing-xs);
+            font-size: 1.1rem;
+        }
+
+        .contact-text p {
+            margin-bottom: 0;
+            font-size: var(--small-size);
+        }
+
+        .social-links-contact {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+
+        .social-links-contact a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--gray-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color var(--transition-normal), transform var(--transition-normal);
+        }
+
+        .social-links-contact a:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .form-container {
+            background-color: white;
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 500;
+            font-size: var(--small-size);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: var(--border-radius-md);
+            font-family: var(--font-family);
+            font-size: var(--small-size);
+            transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(98, 0, 234, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-control.error {
+            border-color: var(--accent-color);
+        }
+
+        .error-message {
+            color: var(--accent-color);
+            font-size: 0.875rem;
+            margin-top: 5px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: var(--border-radius-md);
+            font-family: var(--font-family);
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+            display: inline-block;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(98, 0, 234, 0.3);
+        }
+
+        .success-message {
+            text-align: center;
+            padding: var(--spacing-lg) 0;
+        }
+
+        .success-message i {
+            font-size: 3rem;
+            color: #4CAF50;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .map-section {
+            padding: var(--spacing-xl) var(--spacing-md);
+            background-color: var(--gray-color);
+        }
+
+        .map-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 450px;
+            border: 0;
+        }
+
+        .offices-section {
+            padding: var(--spacing-xl) var(--spacing-md);
+        }
+
+        .offices-intro {
+            max-width: 800px;
+            margin: 0 auto var(--spacing-lg);
+            text-align: center;
+        }
+
+        .offices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .office-card {
+            background-color: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+        }
+
+        .office-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .office-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .office-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-normal);
+        }
+
+        .office-card:hover .office-image img {
+            transform: scale(1.05);
+        }
+
+        .office-info {
+            padding: var(--spacing-md);
+        }
+
+        .office-info h3 {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .office-address {
+            margin-bottom: var(--spacing-sm);
+            font-size: var(--small-size);
+        }
+
+        .office-contact {
+            font-size: var(--small-size);
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-md);
+            }
+
+            .contact-info {
+                padding-right: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/fjh-logo.png" alt="FJH Logo" /></a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="what-we-do.html">What We Do</a></li>
+                    <li><a href="how-we-do-it.html">How We Do It</a></li>
+                    <li><a href="why-us.html">Why Us</a></li>
+                    <li><a href="contact.html" class="active">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="menu-btn">
+                <div class="menu-btn__burger"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1 class="fade-in">Contact Us</h1>
+                    <p class="slide-up">Get in touch with our team to discuss your technology needs</p>
+                </div>
+                <div class="page-header-illustration">
+                    <object type="image/svg+xml" data="images/contact-illustration.svg" class="fade-in">Contact Us
+                        Illustration</object>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-container">
+                <div class="contact-info animate-on-scroll fade-right">
+                    <h2>Let's Start a Conversation</h2>
+                    <p>We'd love to hear from you. Whether you have a question about our services, need a quote, or want
+                        to discuss a project, our team is ready to help.</p>
+
+                    <div class="contact-details">
+                        <!-- Phone -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Phone</h3>
+                                <p>+91-9841410131</p>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Email</h3>
+                                <p>fjhdinyajaylon@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <!-- Address -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Headquarters</h3>
+                                <p>Allwin Towers, 1st Floor<br>Karuppandurai, Tirunelveli<br> Tamil Nadu 627006 - India
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Hours -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Business Hours</h3>
+                                <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday - Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Connect With Us</h3>
+                    <div class="social-links-contact">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="form-container animate-on-scroll fade-left">
+                    <h2>Send Us a Message</h2>
+                    <form id="contact-form" action="https://formspree.io/f/mwpqvkgn" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input name="name" type="text" id="name" class="form-control" placeholder="Your name"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input name="email" type="email" id="email" class="form-control"
+                                placeholder="Your email address" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input name="phone" type="tel" id="phone" class="form-control"
+                                placeholder="Your phone number" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input name="subject" type="text" id="subject" class="form-control"
+                                placeholder="What is this regarding?" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" class="form-control"
+                                placeholder="Tell us about your project or inquiry" required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>FJH</h2>
+                <p>Future Junction of High Tech</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Pages</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="what-we-do.html">What We Do</a></li>
+                        <li><a href="how-we-do-it.html">How We Do It</a></li>
+                        <li><a href="why-us.html">Why Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="what-we-do.html#product-engineering">Product Engineering</a></li>
+                        <li><a href="what-we-do.html#erp-solutions">Enterprise ERP Solutions</a></li>
+                        <li><a href="what-we-do.html#web-development">Web Application Development</a></li>
+                        <li><a href="what-we-do.html#mobile-development">Mobile Application Development</a></li>
+                        <li><a href="what-we-do.html#mobile-development">Data Analytics & Engineering</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <ul class="social-links">
+                        <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FJH - Future Junction of High Tech. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+
+</html>
