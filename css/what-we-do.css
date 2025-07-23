@@ -3,11 +3,53 @@
 /* Services Section with enhanced styling */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
     padding: 4rem 2rem;
     max-width: 1400px;
     margin: 0 auto;
+}
+
+/* Responsive adjustments for services grid */
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        padding: 3rem 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        padding: 2.5rem 1rem;
+    }
+    
+    .service-card {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 2rem 1rem;
+    }
+    
+    .service-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 1.75rem;
+    }
+    
+    .service-title {
+        font-size: 1.3rem;
+    }
+    
+    .service-features li {
+        font-size: 0.9rem;
+    }
 }
 
 .service-card {

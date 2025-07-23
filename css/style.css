@@ -53,6 +53,8 @@ body {
     background-position: center;
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+    touch-action: manipulation; /* Optimize for touch */
 }
 
 a {
@@ -518,14 +520,23 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
-    .hero-container {
-        grid-template-columns: 1fr 1fr;
-        gap: var(--spacing-md);
+/* Large Devices (Desktops, 1200px and down) */
+@media (max-width: 1200px) {
+    .container {
+        width: 95%;
     }
     
-    .hero-illustration img {
-        max-height: 400px;
+    .page-header .container {
+        gap: 1.5rem;
+    }
+}
+
+/* Medium Devices (Tablets, 1024px and down) */
+@media (max-width: 1024px) {
+    :root {
+        --h1-size: clamp(2.5rem, 6vw, 4rem);
+        --h2-size: clamp(1.8rem, 4vw, 2.5rem);
+        --h3-size: clamp(1.3rem, 3vw, 1.8rem);
     }
     
     .about-preview {
@@ -538,32 +549,52 @@ footer {
     }
     
     .footer-content {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: var(--spacing-md);
+    }
+    
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 }
 
+/* Tablet Devices (768px and down) */
 @media (max-width: 768px) {
+    :root {
+        --spacing-xl: 5rem;
+        --spacing-lg: 3rem;
+        --body-size: 1rem;
+    }
+    
     .navbar {
         padding: var(--spacing-sm);
     }
     
-    .hero-container {
-        grid-template-columns: 1fr;
+    .page-header {
+        padding: 5rem 0 3rem;
     }
     
-    .hero-content {
+    .page-header .container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .page-header-content {
         text-align: center;
         order: 1;
     }
     
-    .hero-illustration {
+    .page-header-illustration {
         order: 0;
-        margin-bottom: var(--spacing-md);
+        margin-bottom: 1rem;
     }
     
-    .hero-illustration img {
-        max-height: 300px;
+    .page-header-illustration svg {
+        max-height: 250px;
     }
     
     .nav-links {
@@ -579,6 +610,7 @@ footer {
         align-items: center;
         transition: right var(--transition-normal);
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
     }
     
     .nav-links.active {
@@ -588,6 +620,7 @@ footer {
     .nav-links ul {
         flex-direction: column;
         align-items: center;
+        gap: 1.5rem;
     }
     
     .menu-btn {
@@ -641,12 +674,92 @@ footer {
     }
 }
 
-@media (max-width: 480px) {
-    .hero {
-        padding: 0 var(--spacing-sm);
+/* Small Devices (Mobile Phones, 576px and down) */
+@media (max-width: 576px) {
+    :root {
+        --h1-size: clamp(2rem, 5vw, 3rem);
+        --h2-size: clamp(1.5rem, 4vw, 2rem);
+        --h3-size: clamp(1.2rem, 3vw, 1.5rem);
+        --body-size: 0.95rem;
+        --spacing-lg: 2.5rem;
+        --spacing-xl: 4rem;
     }
+    
+    .container {
+        width: 100%;
+        padding: 0 1rem;
+    }
+    
+    .navbar {
+        padding: 0.75rem 1rem;
+    }
+    
+    .logo img {
+        height: 40px;
+    }
+    
+    .nav-links {
+        width: 80%;
+    }
+    
+    .page-header {
+        padding: 4.5rem 0 2.5rem;
+    }
+    
+    .page-header h1 {
+        margin-bottom: 1rem;
+    }
+    
+    .page-header p {
+        font-size: 1rem;
+    }
+    
+    .cta-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
     
     .services-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-logo {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .footer-logo img {
+        margin: 0 auto;
+    }
+}
+
+/* Extra Small Devices (Small Mobile Phones, 375px and down) */
+@media (max-width: 375px) {
+    :root {
+        --h1-size: clamp(1.8rem, 5vw, 2.5rem);
+        --h2-size: clamp(1.4rem, 4vw, 1.8rem);
+        --body-size: 0.9rem;
+    }
+    
+    .page-header {
+        padding: 4rem 0 2rem;
+    }
+    
+    .page-header-illustration svg {
+        max-height: 200px;
+    }
+    
+    .service-card, .value-card {
+        padding: 1.5rem;
     }
 }
