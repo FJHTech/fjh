@@ -1,77 +1,3 @@
-/* contact.css - Modern styling for the Contact Us page */
-
-/* Page background with modern pattern */
-body {
-    background-image: url('../images/modern-bg-pattern.svg');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-}
-
-/* Enhanced page header with split layout */
-.page-header {
-    position: relative;
-    padding: 6rem 0 4rem;
-    /* background: linear-gradient(135deg, rgba(98, 0, 234, 0.05) 0%, rgba(0, 229, 255, 0.05) 100%); */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    overflow: hidden;
-}
-
-.page-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* background: linear-gradient(90deg, rgba(98, 0, 234, 0.1) 0%, rgba(0, 229, 255, 0.1) 100%); */
-    z-index: -1;
-}
-
-.page-header .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
-}
-
-.page-header-content {
-    text-align: left;
-}
-
-.page-header h1 {
-    margin-bottom: var(--spacing-md);
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-weight: 200;
-    letter-spacing: -1px;
-    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
-}
-
-.page-header p {
-    font-size: 1.25rem;
-    max-width: 100%;
-    margin: 0;
-    color: var(--text-color);
-}
-
-.page-header-illustration {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.page-header-illustration svg {
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-    filter: drop-shadow(0 10px 20px rgba(98, 0, 234, 0.2));
-}
-
 /* Contact section enhancement */
 .contact-section {
     padding: 5rem 0;
@@ -242,7 +168,7 @@ textarea.form-control {
 .submit-btn {
     display: inline-block;
     padding: 1rem 2.5rem;
-    background: linear-gradient(90deg, #6200EA, #00E5FF);
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     color: white;
     font-weight: 600;
     border: none;
@@ -395,64 +321,4 @@ textarea.form-control {
     font-size: var(--small-size);
     color: var(--secondary-color);
     line-height: 1.6;
-}
-
-/* Responsive adjustments */
-@media (max-width: 992px) {
-    .page-header .container {
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
-    }
-    
-    .page-header-illustration svg {
-        max-height: 300px;
-    }
-    
-    .contact-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .offices-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-}
-
-@media (max-width: 768px) {
-    .page-header .container {
-        grid-template-columns: 1fr;
-    }
-    
-    .page-header-content {
-        text-align: center;
-        order: 1;
-    }
-    
-    .page-header-illustration {
-        order: 2;
-        margin-top: 2rem;
-    }
-    
-    .page-header p {
-        font-size: 1rem;
-        margin: 0 auto;
-    }
-    
-    .contact-info,
-    .form-container {
-        padding: 1.5rem;
-    }
-    
-    .contact-info h2,
-    .form-container h2 {
-        font-size: 1.75rem;
-    }
-    
-    .offices-intro h2 {
-        font-size: 2rem;
-    }
-    
-    .offices-intro p {
-        font-size: 1rem;
-    }
 }
