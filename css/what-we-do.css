@@ -106,18 +106,20 @@
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
-
 .service-features {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .service-features li {
     display: flex;
-    align-items: center;
+    align-items: center; /* changed from flex-start to center */
+    line-height: 1.6;
     margin-bottom: 0.75rem;
     color: #111827;
     font-size: 0.95rem;
+    gap: 0.6rem; /* clean gap usage */
 }
 
 .service-features li::before {
@@ -126,6 +128,6 @@
     height: 8px;
     background: linear-gradient(135deg, #10B981, #3B82F6);
     border-radius: 50%;
-    margin-right: 0.75rem;
     flex-shrink: 0;
+    /* removed margin-right to avoid double spacing with gap */
 }
