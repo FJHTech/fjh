@@ -83,7 +83,7 @@
 .service-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #32bdcf, rgb(103, 102, 102));
+    background: linear-gradient(135deg, #32bdcf, rgb(255, 255, 255));
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -91,7 +91,7 @@
     margin-bottom: 1.5rem;
     font-size: 2rem;
     color: white;
-    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 10px 30px rgba(212, 223, 241, 0.3);
 }
 
 .service-title {
